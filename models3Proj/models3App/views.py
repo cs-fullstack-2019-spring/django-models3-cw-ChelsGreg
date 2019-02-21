@@ -17,7 +17,7 @@ def newBook(request):
     return HttpResponse(str(createBook.name) + " " + str(createBook.pageNumber) + " " + str(createBook.genre) + " " + str(createBook.publishDate))
 
 
-# FUNCTION TO SEE ALL BOOKS IN ARRAY
+# FUNCTION TO SEE ALL BOOKS (by Name)
 def allBooks(request):
     seeAll = Book.objects.all()
     return HttpResponse(seeAll)
@@ -28,6 +28,7 @@ def newCar(request):
     driveThis.save()
     return HttpResponse(str(driveThis.make) + "" + str(driveThis.model) + "" + str(driveThis.year))
 
+# FUNCTION TO SEE ALL CARS(by MAKE)
 def allCars(request):
     allCars = Car.objects.all()
     return HttpResponse(allCars)
